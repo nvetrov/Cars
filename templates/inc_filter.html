@@ -3,32 +3,37 @@
 
 {% block filter %}
     <h1>Фильтр </h1>
-    <form action="{% url "home" %}" class="form">
-        <label>
-            <input type="text" name="manufacturer" placeholder="производитель">
-        </label>
-        <label>
-            <input type="text" name="model" placeholder="модель">
-        </label>
-        <label>
-            <input type="number" name="year" placeholder="год выпуска">
-        </label>
-        <select name="kpp">
-            <option value="" selected>Выберите коробку передач</option>
-            <option value="0">Механика</option>
-            <option value="1">Автомат</option>
-            <option value="2">Робот</option>
-        </select>
-        <label>
-            <input type="text" name="color" placeholder="цвет">
-        </label>
-        <input type="submit" class="btn btn-primary">
+    <form action="{% url "home" %}">
+        <div class="form-group">
+            <label>
+                <input type="text" name="manufacturer" placeholder="производитель">
+            </label>
+
+            <label>
+                <input type="text" name="model" placeholder="модель">
+            </label>
+            <label>
+                <input type="number" name="year" placeholder="год выпуска">
+            </label>
+            <label>
+                <select name="kpp">
+                    <option value="" selected>Выберите коробку передач</option>
+                    <option value="0">Механика</option>
+                    <option value="1">Автомат</option>
+                    <option value="2">Робот</option>
+                </select>
+            </label>
+            <label>
+                <input type="text" name="color" placeholder="цвет">
+            </label>
+
+                <button type="submit" class="btn btn-success">Показать</button> </div>
     </form>
     <br>
     <ul>
         <h2> Машинки в базе: </h2>
         {% for car in cars %}
-            <li> {{ car.manufacturer }}  {{ car.model }} {{ car.year }} {{ car.kpp }} {{ car.color }}  </li>
+            <li> {{ car.manufacturer }} {{ car.model }} {{ car.year }} {{ car.kpp }} {{ car.color }}  </li>
 
         {% endfor %}
     </ul>
