@@ -5,10 +5,10 @@ from django.views.generic import TemplateView, ListView
 import q
 from myapp.models import Car
 
-#
-# class CarListView(ListView):
-#     model = Car
-#     template_name = "car_list.html"
+
+class CarListView(ListView):
+    model = Car
+    template_name = "car_list.html"
 
 
 class CarsView(TemplateView):
